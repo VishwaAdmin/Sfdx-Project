@@ -1,0 +1,13 @@
+public with sharing class CheckMobileBeforeSubmit_Handler {
+   public static void CheckMobileDetails(List<Mobile_Form__c> formList){
+    if(formList!=NULL){
+        for(Mobile_Form__c forms : formList){
+            if(forms.Mobile_Name__c == Null || forms.Mobile_Name__c=='') {
+                forms.Mobile_Name__c.addError('Mobile Name Required.');
+            } else if (forms.Model_Name__c==Null || forms.Model_Name__c=='') {
+                forms.Model_Name__c.addError('Model Name Required.');
+            }
+        }
+     }
+   }
+}

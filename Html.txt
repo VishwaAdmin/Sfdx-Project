@@ -1,0 +1,19 @@
+<template>
+    <div>
+  <lightning-card title="Mobile Form">
+    <h3 class="Header">Note: Mobile Name and Model Name is Required, without them application can't be submitted</h3>
+      <div class="slds-p-horizontal_small" style="width: 350px;">
+          <lightning-input  label="Full Name" name="fullName" onchange={handleInputChange}></lightning-input>
+          <lightning-input  label="Phone Number" name="phoneNumber" onchange={handleInputChange}></lightning-input>
+          <lightning-input  label="Mobile Name" name="mobileName" onchange={handleInputChange}></lightning-input>
+          <lightning-input  label="Model Name" name="modelName" onchange={handleInputChange}></lightning-input>
+          <lightning-input  label="Issue" name="issue" onchange={handleInputChange}></lightning-input>
+          <!-- sldsValidatorIgnoreNextLine -->
+          <lightning-input  label="Description" name="description" onchange={handleInputChange}></lightning-input>
+      </div>
+      <div class="slds-p-horizontal_small slds-p-vertical_small">
+          <lightning-button type="Submit" label="Submit" onclick={handleSubmit}></lightning-button>
+      </div>
+  </lightning-card>
+</div>
+</template>

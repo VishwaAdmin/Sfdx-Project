@@ -1,0 +1,14 @@
+public with sharing class CustomerInformation {
+    @AuraEnabled
+    public static void createMobileFormRecord(String fullName, String phoneNumber, String mobileName, 
+                                               String modelName, String issue, String description) {
+        Mobile_Form__c mobileForm = new Mobile_Form__c();
+        mobileForm.Full_Name__c = fullName;
+        mobileForm.Phone_Number__c = phoneNumber;
+        mobileForm.Mobile_Name__c = mobileName;
+        mobileForm.Model_Name__c = modelName;
+        mobileForm.Issue__c = issue;
+        mobileForm.Description__c = description;
+        insert mobileForm;
+    }
+}

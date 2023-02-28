@@ -1,0 +1,5 @@
+trigger CheckMobileBeforeSubmit on Mobile_Form__c (before insert) {
+    if(trigger.isBefore && trigger.isInsert) {
+        CheckMobileBeforeSubmit_Handler.CheckMobileDetails(trigger.new);
+    }
+}

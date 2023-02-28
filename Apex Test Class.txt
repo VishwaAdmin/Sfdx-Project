@@ -1,0 +1,42 @@
+@isTest
+public with sharing class CheckMobileBeforeSubmit_Handler_Test {
+  @isTest static void TestMobileDetails() {
+    /* 1st functionality test */
+    Mobile_Form__c mobiles = new Mobile_Form__c();
+    mobiles.Full_Name__c ='Vishwanath';
+    mobiles.Phone_Number__c = '6301424062';
+    mobiles.Mobile_Name__c = 'iPhone Apple';
+    mobiles.Model_Name__c = '14 Pro';
+    mobiles.issue__c = 'Scrren Touch';
+    mobiles.Description__c = 'Screen is not working properly'; 
+
+    insert mobiles;
+
+    /* 2nd functionality test */
+    Mobile_Form__c mobiles1 = new Mobile_Form__c();
+    mobiles1.Full_Name__c ='Vishwanath';
+    mobiles1.Phone_Number__c = '6301424062';
+    mobiles1.Mobile_Name__c = '';
+    mobiles1.Model_Name__c='14Pro';
+    mobiles1.issue__c = 'Scrren Touch';
+    mobiles1.Description__c = 'Screen is not working properly';
+    try{
+        test.startTest();
+        insert mobiles1;
+        test.stopTest();
+    }catch(Exception e) {
+        e.getMessage();
+    }
+
+    /* 3rd functionality test */
+    Mobile_Form__c mobiles2 = new Mobile_Form__c();
+    mobiles2.Full_Name__c ='Vishwanath';
+    mobiles2.Phone_Number__c = '6301424062';
+    mobiles2.Mobile_Name__c = 'iPhone Apple';
+    mobiles2.Model_Name__c = '14pro';
+    mobiles2.issue__c = 'Scrren Touch';
+    mobiles2.Description__c = 'Screen is not working properly';
+
+    insert mobiles2;
+  } 
+}
